@@ -7,4 +7,5 @@ with open('data.json') as data_file:
 
 for i in data['results']:
   if i['ip_address'] == "1.2.3.4":
+# if you also'd like delete Server Pools in nsxt https://yournsxturl/api/v1/loadbalancer/pools/    
     requests.delete('https://yournsxturl/api/v1/loadbalancer/virtual-servers/' + i['id'], verify=False, auth=HTTPBasicAuth('login', 'password'))
